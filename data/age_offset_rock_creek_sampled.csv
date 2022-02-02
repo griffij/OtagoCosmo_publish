@@ -1,0 +1,5 @@
+SampleID,Age,AgeSigma,Offset,OffsetSigma
+T1,16151,455,2.5,0.5
+T2,34247,760,4,1
+T4,97848,8145,14,2
+T6,112771,4369,24,3
