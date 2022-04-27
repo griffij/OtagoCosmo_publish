@@ -81,9 +81,21 @@ for key, value in age_dict.items():
     if key=='T3':
         xvals = np.arange(60, 120, 0.1)
         for i, mu in enumerate(value):
-            dnorm = norm(loc=mu, scale=sigma_dict[key][i])
+            sigma = sigma_dict[key][i]
+            dnorm = norm(loc=mu, scale=sigma) #sigma_dict[key][i])
             plt.plot(xvals, dnorm.pdf(xvals), c='0.6')
-            plt.fill(xvals, dnorm.pdf(xvals), facecolor='0.8', alpha=0.7) 
+            plt.fill(xvals, dnorm.pdf(xvals), facecolor='0.8', alpha=0.7)
+            if i==0:
+                ax = plt.gca()
+                xytext_loc = (95, 0.195)
+            elif i==1:
+                xytext_loc = (106, 0.16)
+            elif i==2:
+                xytext_loc = (70, 0.18)
+            lab = r'%.1f $\pm$ %.1f' % (mu,sigma)
+            ax.annotate(lab, xy=(mu, max(dnorm.pdf(xvals))),
+                        xytext = xytext_loc, xycoords='data',
+                        fontsize=12, arrowprops=dict(arrowstyle="->")) 
         mu_samples = np.mean(sample_dict[key])
         print('musamples', mu_samples)
         sig_samples = np.std(sample_dict[key])
@@ -91,6 +103,11 @@ for key, value in age_dict.items():
         dnorm_samp = norm(loc=mu_samples, scale=sig_samples)
         plt.plot(xvals, dnorm_samp.pdf(xvals), c='0.3', zorder=11)
         plt.fill(xvals, dnorm_samp.pdf(xvals), facecolor='0.4', alpha=0.75, zorder=10)#, alpha=0.5)
+        lab = r'%.1f $\pm$ %.1f' % (mu_samples,sig_samples)
+        xytext_loc = (108, 0.075)
+        ax.annotate(lab, xy=(mu_samples, max(dnorm_samp.pdf(xvals))),
+                    xytext = xytext_loc, xycoords='data',
+                    fontsize=12, fontweight='bold', arrowprops=dict(arrowstyle="->")) 
         plt.xlabel('Age (ka)')
         plt.ylabel('Density')
         plt.savefig('plots/sampling_method.png', dpi=300)
