@@ -111,6 +111,7 @@ for key, value in age_dict.items():
         plt.xlabel('Age (ka)')
         plt.ylabel('Density')
         plt.savefig('plots/sampling_method.png', dpi=300)
+        plt.savefig('plots/sampling_method.pdf', dpi=300) 
         
 print('\nNeds Creek')
 for key, value in sample_dict.items():
