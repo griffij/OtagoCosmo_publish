@@ -1,5 +1,5 @@
 # OtagoCosmo_publish
-Clean code for for publishing calculations of slip rates from cosmo data in Otago. Supports:
+Clean code for publishing calculations of slip rates from cosmo data in Otago. Supports:
 Griffin, Stirling, Wilcken and Barrell: Late Quaternary slip rates for the Hyde and Dunstan faults,
 southern New Zealand: implications for strain migration in a slowly deforming continental plate margin
 
