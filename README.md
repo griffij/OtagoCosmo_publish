@@ -8,7 +8,8 @@ Contains the following code:
 `sample_ages.py`
 This combines multiple CRN ages to estimate surface ages by taking Monte Carlo samples from
 the uncertainty distribution of each individual age, combining these, and then taking the
-mean and standard deviation assuming a normal distribution.
+mean and standard deviation assuming a normal distribution. A more generic example of this code,
+that is designed for others to use, is in `sample_ages_generic.py`
 
 `age_offset_samples_rockcreek.py and age_offset_samples_nedscreek.py`
 Take Monte Carlo samples for each age-offset combination, and then fit
