@@ -180,15 +180,15 @@ print(bval_ll, bval_ul)
 txt = r'${:6.2f}_{{:4.2f}}^{{:4.2f}}$ mm/yr'.format(bval_median*1000, bval_ll*1000, bval_ul*1000)
 txt = r'${%.3f}_{{-%.3f}}^{+%.3f}$ mm/yr' % (bval_median*1000, (bval_median - bval_ll)*1000,
                                              (bval_ul-bval_median)*1000) 
-ax.annotate(txt, (300000, 27.6), xytext = (200000, 32),
+ax.annotate(txt, (300000, 27.6), xytext = (180000, 32),
             arrowprops=dict(arrowstyle="->"), fontsize=10)
 txt = r'${%.3f}_{{-%.3f}}^{+%.3f}$ mm/yr' % (bval_a_median*1000, (bval_a_median - bval_ll_a)*1000,
                                              (bval_ul_a-bval_a_median)*1000) 
-ax.annotate(txt, (16000, 4.0), xytext = (80000, 4),
+ax.annotate(txt, (17000, 4.0), xytext = (80000, 4),
             arrowprops=dict(arrowstyle="->", color='r'), fontsize=10, color='r')
 txt = r'${%.3f}_{{-%.3f}}^{+%.3f}$ mm/yr' % (bval_b_median*1000, (bval_b_median - bval_ll_b)*1000,
                                              (bval_ul_b-bval_b_median)*1000)
-ax.annotate(txt, (200000, 19.2), xytext = (130000, 24),
+ax.annotate(txt, (220000, 20.5), xytext = (270000, 15),
             arrowprops=dict(arrowstyle="->", color='r'), fontsize=10, color='r')   
 # Here we do piecwise fits along each sample.
 line_xvals = []
